@@ -1,0 +1,11 @@
+[package]
+name = "guessing_game"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# everything that follows a header is part of that section
+# until another section starts
+[dependencies]
+rand = "0.8.3" # shorthand for ^0.8.3 which means anything at least 0.8.3, less than 0.9
