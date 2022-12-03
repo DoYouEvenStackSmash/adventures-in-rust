@@ -1,9 +1,12 @@
 fn main() {
+    //incr_head();
+    toy_mut();
+    /*
     println!("Hello, world!");
     ref_as_param();
     borrow_test();
     println!("\n");
-    mut_ref_test();
+    mut_ref_test();*/
 }
 
 
@@ -43,8 +46,15 @@ fn pass_through2(s : &String) -> String {
 }
 
 
+fn toy_ref() {
+    let s = String::from("hi");
+    let s_ref:&String = &s;
+    println!("{s_ref}");
+}
+
 //  uses mutable reference and ownership to add to an immutable string
 fn mut_ref_test() {
+    toy_ref();
     println!("\nMutable Reference operations");
     let k1 = String::from("X");
 
@@ -75,4 +85,22 @@ fn bounce_back_2(s: String) -> String {
 
 fn change(s : &mut String) {
     s.push_str("CC");
+}
+
+fn incr(n: &mut i32) {
+    *n += 1;
+}
+
+fn incr_head() {
+    let mut n = 1;
+    incr(&mut n);
+    println!("{n}");
+}
+fn toy_mut() {
+    let mut s = String::from("hello");
+    let s2 = &s;
+    let s3 = &mut s;
+    s3.push_str(" world");
+    let s2 = &s;
+    println!("{s2}");
 }
