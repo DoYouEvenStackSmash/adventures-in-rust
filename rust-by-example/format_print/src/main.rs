@@ -64,3 +64,17 @@ fn head(t : bool) {
   }
   // println!("{t}");
 }
+
+use std::fmt;
+// create a structure for display
+
+struct Stx(i32);  // tuple struct containing i32
+
+impl fmt::Display for Stx {
+  // format must have this signature
+  fn fmt(&self, f: &mut fmt::Formatter) -> fmt:: Result {
+    // write the first element to the supplied output stream f. returns result
+    write!(f, "{}", self.0)
+  }
+}
+
